@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Currency Data</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mx-auto py-8">
+    <h1 class="text-3xl font-bold mb-4">Currency Data</h1>
+    <p class="text-sm text-gray-500">Last Update: <%= lastUpdate %></p>
+    <table id="currency-table" class="w-full border-collapse">
+      <thead>
+        <tr>
+          <th class="py-2 px-4 bg-gray-200 text-left">Symbol</th>
+          <th class="py-2 px-4 bg-gray-200 text-left">Name</th>
+          <th class="py-2 px-4 bg-gray-200 text-left">Buy</th>
+          <th class="py-2 px-4 bg-gray-200 text-left">Sell</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% data.forEach(item => { %>
+          <tr>
+            <td class="py-2 px-4 border-b"><%= item.symbol %></td>
+            <td class="py-2 px-4 border-b"><%= item.name %></td>
+            <td class="py-2 px-4 border-b"><%= item.buy %></td>
+            <td class="py-2 px-4 border-b"><%= item.sell %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
